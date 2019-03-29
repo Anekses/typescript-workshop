@@ -1,35 +1,16 @@
-var suits = ["hearts", "spades", "clubs", "diamonds"];
-var cardNumber = 10;
-var cardObject = { suit: "spades", card: 12 };
-var cardSuit = "clubs";
-var pickRandomCard = function () {
-    return Math.ceil(Math.random() * 13 + 1);
-};
-var pickRandomSuit = function () {
-    return suits[Math.ceil(Math.random() * suits.length - 1)];
-};
-var displayAllPickedCards = function (array) {
-    array.forEach(function (element) {
-        console.log("card: " + element.card + " of " + element.suit);
-    });
-};
-function pickCard(x) {
-    if (typeof x == "string") {
-        var pickedCard = pickRandomCard();
-        var pickedSuit = x;
-        return { suit: pickedSuit, card: pickedCard };
-    }
-    if (typeof x == "object") {
-        return x;
-    }
-    else if (typeof x == "number") {
-        var pickedCard = x % 13;
-        var pickedSuit = pickRandomSuit();
-        return { suit: pickedSuit, card: pickedCard };
-    }
-}
-var pickedCards = [];
-pickedCards.push(pickCard(cardNumber));
-pickedCards.push(pickCard(cardObject));
-pickedCards.push(pickCard(cardSuit));
-displayAllPickedCards(pickedCards);
+// 1. Podstawowa funkcja
+// Dane wejściowe: a, b
+// Dane wyjściowe: suma(a,b)
+console.log("Zadanie 1");
+// 2. Parametry opcjonalne
+// Dane wejściowe: a, b, isMultiplication
+// Dane wyjściowe: Jeśli isMultiplication ? mnożenie : dzielenie; Jeśli isMultiplication == false i b == 0, zwróc "b jest równe 0"; 
+console.log("Zadanie 2");
+// 3. Domyślne wartości
+// Dane wejściowe: a, b, Enum operacji matematycznych - domyślnie suma
+// Dane wyjściowe: suma, różnica, mnożenie, dzielenie. Jeśli b == 0, od razu return 0;
+console.log("Zadanie 3");
+// 4. Rest parameters
+// Dane wejściowe: cztery stringi "Joseph", "Samuel", "Lucas", "MacKinzie"
+// Dane wyjściowe: konkatenacja stringów (ze spacją pomiędzy), gdzie pierwszy z nich jest użyty dwukrotnie (na początku i na końcu)
+console.log("Zadanie 4");
