@@ -1,70 +1,49 @@
-let password = "Rocky";
-enum Color { Red, Blue, Green};
-
-abstract class Beeing {
-    abstract age: number;
-    protected name: string;
-    public numberOfLegs: number;
-
-    abstract grow(): void;
+//Zadania 1-2
+let greet = (person) => {
+    console.log(`Hello, ${person.firstName}`);
 }
 
-class Animal extends Beeing {
-    public age: number;
-
-    constructor(age: number, name: string) {
-        super();
-        this.name = name;
-        this.age = age;
-    }
-
-    move(distance: number): void {
-        console.log(`The ${this.name} moved ${distance} meters`);
-    }
-
-    grow(): void {
-        this.age++;
-    }
+let changeName = (person, newName) => {
+    person.firstName = newName;
 }
 
-class Dog extends Animal {
-    public color: Color;
-    public hasChildren: boolean;
-    private _fullName: string;
+let person0 = {
+    firstName: "Jon"
+}
 
-    constructor(age: number, name: string, color: Color, hasChildren: boolean) {
-        super(age, name);
-        this.color = color;
-        this.hasChildren = hasChildren;
-    }
+let person1 = {
+    firstName: "Jon",
+    age: 30
+}
 
-    set fullName(value: string) {
-        if(value.length > 5) {
-            this._fullName = value;
-        }
-    }
+let person2 = {
+    firstName: "Jon",
+    age: 30,
+    hobbies: ["Cooking", "TV"],
+    car: "Mazda"
+}
 
-    get fullName() {
-        if (password == 'Balboa') {
-            return this.name;
-        }
-        return 'Wrong password!';
-    }
-
-    move(distance) {
-        console.log(`The color of dog is: ${Color[this.color]}`);
-        super.move(distance);
-    }
-
-    bark() {
-        console.log('Woof!');
+let person3 = {
+    firstName: "Jon",
+    age: 30,
+    hobbies: ["Cooking", "TV"],
+    car: "Mazda",
+    greet(lastName) {
+        console.log(`Hi, I am ${this.firstName} ${lastName}`)
     }
 }
 
-let dog: Dog = new Dog(8, "Reksio", Color.Red, false);
-dog.move(20);
-dog.bark();
+greet(person0);
+changeName(person0, "Johny");
+greet(person0);
+// greet(person1);
+// greet(person2);
+// greet(person3);
 
-console.log(dog.age);
-dog.grow();
-console.log(dog.age);
+//Zadanie 3
+let isThisSamePersonFunction = (p1, p2) => {
+    if (p1.firstName == p2.firstName) {
+        return true;
+    }
+    return false;
+}
