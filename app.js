@@ -1,65 +1,56 @@
-//Zadania 1-2
-// interface NamedPerson {
-//     firstName: string,
-//     age?: number,
-//     [propName: string]: any,
-//     greet?(lastName: string): void
-// }
-var greet = function (person) {
-    console.log("Hello, " + person.firstName);
+//Zadanie 1
+var echo = function (data) {
+    return data;
 };
-var changeName = function (person, newName) {
-    person.firstName = newName;
+console.log('Zadanie 1');
+console.log(echo(5));
+console.log(echo("Cookie"));
+console.log(echo(5).length);
+console.log(echo("Cookie").length);
+// console.log(echo(5).toFixed());
+// console.log(echo("Cookie").toFixed());
+//Zadanie 2
+var myIdentity = function (arg) {
+    return arg;
 };
-var person0 = {
-    firstName: "Jon"
-};
-var person1 = {
-    firstName: "Jon",
-    age: 30
-};
-var person2 = {
-    firstName: "Jon",
-    age: 30,
-    hobbies: ["Cooking", "TV"],
-    car: "Mazda"
-};
-var person3 = {
-    firstName: "Jon",
-    age: 30,
-    hobbies: ["Cooking", "TV"],
-    car: "Mazda",
-    greet: function (lastName) {
-        console.log("Hi, I am " + this.firstName + " " + lastName);
+var noIdentity = function (arg) {
+    if (typeof arg == 'boolean') {
+        return 5;
     }
+    return true;
 };
-greet(person0);
-changeName(person0, "Johny");
-greet(person0);
-greet(person1);
-greet(person2);
-greet(person3);
-var isThisSamePersonFunction;
-isThisSamePersonFunction = function (p1, p2) {
-    if (p1.firstName == p2.firstName) {
-        return true;
+//Zadanie 3
+var GenericAdd = /** @class */ (function () {
+    function GenericAdd() {
     }
-    return false;
-};
-//Zadanie 4
-var Person = /** @class */ (function () {
-    function Person(firstName, age) {
-        this.firstName = firstName;
-        this.age = age;
-    }
-    Person.prototype.greet = function (lastName) {
-        console.log("Hi, I am " + this.firstName + " " + lastName);
+    GenericAdd.prototype.add = function (x, y) {
+        return x + y;
     };
-    return Person;
+    return GenericAdd;
 }());
-var myPerson = new Person("Stefan", 40);
-myPerson.greet("Stefański");
-var person4 = {
-    firstName: "Jon",
-    hobbies: ["Cooking", "TV"]
-};
+console.log('Zadanie 3');
+var myGenericNumber = new GenericAdd();
+myGenericNumber.baseValue = 0;
+console.log(myGenericNumber.add(5, 10));
+var myGenericString = new GenericAdd();
+myGenericString.baseValue = "";
+console.log(myGenericString.add("test ", "ciastko"));
+var myGenericBoolean = new GenericAdd();
+myGenericBoolean.baseValue = false;
+console.log(myGenericBoolean.add(true, false));
+//Zadanie 4
+var SimpleMath = /** @class */ (function () {
+    function SimpleMath(base, multi) {
+        this.baseValue = base;
+        this.multiplyValue = multi;
+    }
+    SimpleMath.prototype.calculate = function () {
+        return +this.baseValue * +this.multiplyValue;
+    };
+    return SimpleMath;
+}());
+console.log('Zadanie 4');
+var simpleMath = new SimpleMath("5", "10");
+var simpleMath1 = new SimpleMath("5", 10);
+var simpleMath2 = new SimpleMath(5, "10");
+var simpleMath3 = new SimpleMath(5, 10);
