@@ -5,39 +5,36 @@ var echo = function (data) {
 console.log('Zadanie 1');
 console.log(echo(5));
 console.log(echo("Cookie"));
-console.log(echo(5).length);
+// console.log(echo(5).length);
 console.log(echo("Cookie").length);
-// console.log(echo(5).toFixed());
-// console.log(echo("Cookie").toFixed());
-//Zadanie 2
+console.log(echo(5).toFixed());
 var myIdentity = function (arg) {
     return arg;
 };
-var noIdentity = function (arg) {
-    if (typeof arg == 'boolean') {
-        return 5;
-    }
-    return true;
-};
-//Zadanie 3
+//BAD!
+// let noIdentity: GenericIdentityFn = (arg) => {
+//     if (typeof arg == 'boolean') {
+//         return 5;
+//     }
+//     return true;
+// }
+console.log('Zadanie 3');
 var GenericAdd = /** @class */ (function () {
     function GenericAdd() {
     }
-    GenericAdd.prototype.add = function (x, y) {
-        return x + y;
-    };
     return GenericAdd;
 }());
-console.log('Zadanie 3');
 var myGenericNumber = new GenericAdd();
 myGenericNumber.baseValue = 0;
+myGenericNumber.add = function (x, y) { return x + y; };
 console.log(myGenericNumber.add(5, 10));
 var myGenericString = new GenericAdd();
 myGenericString.baseValue = "";
+myGenericString.add = function (x, y) { return x + y; };
 console.log(myGenericString.add("test ", "ciastko"));
-var myGenericBoolean = new GenericAdd();
-myGenericBoolean.baseValue = false;
-console.log(myGenericBoolean.add(true, false));
+// let myGenericBoolean = new GenericAdd();
+// myGenericBoolean.baseValue = false;
+// console.log(myGenericBoolean.add(true, false));
 //Zadanie 4
 var SimpleMath = /** @class */ (function () {
     function SimpleMath(base, multi) {
@@ -51,6 +48,6 @@ var SimpleMath = /** @class */ (function () {
 }());
 console.log('Zadanie 4');
 var simpleMath = new SimpleMath("5", "10");
-var simpleMath1 = new SimpleMath("5", 10);
-var simpleMath2 = new SimpleMath(5, "10");
+// const simpleMath1 = new SimpleMath<string, number>("5", 10);
+// const simpleMath2 = new SimpleMath<number, string>(5, "10");
 var simpleMath3 = new SimpleMath(5, 10);
