@@ -1,53 +1,58 @@
 //Zadanie 1
-var echo = function (data) {
-    return data;
-};
 console.log('Zadanie 1');
-console.log(echo(5));
-console.log(echo("Cookie"));
-// console.log(echo(5).length);
-console.log(echo("Cookie").length);
-console.log(echo(5).toFixed());
-var myIdentity = function (arg) {
-    return arg;
-};
-//BAD!
-// let noIdentity: GenericIdentityFn = (arg) => {
-//     if (typeof arg == 'boolean') {
-//         return 5;
-//     }
-//     return true;
-// }
+var Car = /** @class */ (function () {
+    function Car(make) {
+        this.make = make;
+    }
+    return Car;
+}());
+var car = new Car("Nissan");
+console.log(car);
+console.log("selfDriving: " + car['selfDrivable']);
+//Zadanie 2
+var Vechical = /** @class */ (function () {
+    function Vechical(make) {
+        this.make = make;
+    }
+    return Vechical;
+}());
+var vechical = new Vechical("Nissan");
+console.log(vechical);
+console.log(vechical['wheels']);
+//Zadanie 3
 console.log('Zadanie 3');
-var GenericAdd = /** @class */ (function () {
-    function GenericAdd() {
+var Employee = /** @class */ (function () {
+    function Employee(firstName, lastName) {
+        this.firstName = firstName;
+        this.lastName = lastName;
     }
-    return GenericAdd;
-}());
-var myGenericNumber = new GenericAdd();
-myGenericNumber.baseValue = 0;
-myGenericNumber.add = function (x, y) { return x + y; };
-console.log(myGenericNumber.add(5, 10));
-var myGenericString = new GenericAdd();
-myGenericString.baseValue = "";
-myGenericString.add = function (x, y) { return x + y; };
-console.log(myGenericString.add("test ", "ciastko"));
-// let myGenericBoolean = new GenericAdd();
-// myGenericBoolean.baseValue = false;
-// console.log(myGenericBoolean.add(true, false));
-//Zadanie 4
-var SimpleMath = /** @class */ (function () {
-    function SimpleMath(base, multi) {
-        this.baseValue = base;
-        this.multiplyValue = multi;
-    }
-    SimpleMath.prototype.calculate = function () {
-        return +this.baseValue * +this.multiplyValue;
+    Employee.prototype.greet = function (message, age, check) {
+        return this.firstName + " " + this.lastName + " says: " + message;
     };
-    return SimpleMath;
+    return Employee;
 }());
+var emp = new Employee('Mohan Ram', 'Ratnakumar');
+emp.greet('hello', 15, true);
+//Zadanie 4
 console.log('Zadanie 4');
-var simpleMath = new SimpleMath("5", "10");
-// const simpleMath1 = new SimpleMath<string, number>("5", 10);
-// const simpleMath2 = new SimpleMath<number, string>(5, "10");
-var simpleMath3 = new SimpleMath(5, 10);
+var EmployeeWorker = /** @class */ (function () {
+    function EmployeeWorker() {
+    }
+    return EmployeeWorker;
+}());
+var empWorker = new EmployeeWorker();
+empWorker.name = 'Jan Nowak';
+console.log(empWorker.name);
+console.log(empWorker.name);
+//Zadanie 5
+console.log('Zadanie 5');
+var EmployeeParameter = /** @class */ (function () {
+    function EmployeeParameter() {
+    }
+    EmployeeParameter.prototype.greet = function (message) {
+        return "Hello " + message;
+    };
+    return EmployeeParameter;
+}());
+var empParameter = new EmployeeParameter();
+console.log(empParameter.greet('Jon'));

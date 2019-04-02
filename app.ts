@@ -1,74 +1,62 @@
 //Zadanie 1
-let echo = <T>(data: T): T => {
-    return data;
+console.log('Zadanie 1');
+class Car {
+    public make: string;
+    constructor(make: string) {
+        this.make = make;
+    }
 }
 
-console.log('Zadanie 1')
-console.log(echo(5));
-console.log(echo("Cookie"));
+let car: Car = new Car("Nissan");
+console.log(car);
+console.log(`selfDriving: ${car['selfDrivable']}`);
 
-// console.log(echo(5).length);
-console.log(echo("Cookie").length);
-
-console.log(echo(5).toFixed());
-// console.log(echo("Cookie").toFixed());
 
 //Zadanie 2
-interface GenericIdentityFn {
-    <T>(func: T): T
+class Vechical {
+    public make: string;
+    constructor(make: string) {
+        this.make = make;
+    }
 }
 
-let myIdentity: GenericIdentityFn = <T>(arg: T): T => {
-    return arg;
+let vechical: Vechical = new Vechical("Nissan");
+console.log(vechical);
+console.log(vechical['wheels']);
+
+
+//Zadanie 3
+console.log('Zadanie 3');
+class Employee {
+    constructor(private firstName: string, private lastName: string) {}
+
+    
+    greet(message: string, age: number, check: boolean): string {
+        return `${this.firstName} ${this.lastName} says: ${message}`;
+    }
 }
 
-//BAD!
-// let noIdentity: GenericIdentityFn = (arg) => {
-//     if (typeof arg == 'boolean') {
-//         return 5;
-//     }
-//     return true;
-// }
-
-console.log('Zadanie 3')
-
-class GenericAdd<T extends number | string> {
-    baseValue: T;
-    add: (x: T, y: T) => T;
-}
-
-let myGenericNumber = new GenericAdd<number>();
-myGenericNumber.baseValue = 0;
-myGenericNumber.add = (x: number, y: number) => x + y;
-console.log(myGenericNumber.add(5, 10));
-
-let myGenericString = new GenericAdd<string>();
-myGenericString.baseValue = "";
-myGenericString.add = (x: string, y: string) => x + y;
-console.log(myGenericString.add("test ", "ciastko"));
-
-// let myGenericBoolean = new GenericAdd();
-// myGenericBoolean.baseValue = false;
-// console.log(myGenericBoolean.add(true, false));
+let emp = new Employee('Mohan Ram', 'Ratnakumar');
+emp.greet('hello', 15, true);
 
 //Zadanie 4
-class SimpleMath<T extends U, U extends number | string> {
-    baseValue: T;
-    multiplyValue: U;
-
-    constructor(base: T, multi: U) {
-        this.baseValue = base;
-        this.multiplyValue = multi;
-    }
-
-    calculate(): number {
-        return +this.baseValue * +this.multiplyValue;
-    }
+console.log('Zadanie 4')
+class EmployeeWorker {
+    name: string;
 }
 
-console.log('Zadanie 4')
+let empWorker = new EmployeeWorker();
+empWorker.name = 'Jan Nowak';
+console.log(empWorker.name);
+console.log(empWorker.name);
 
-const simpleMath = new SimpleMath<string, string>("5", "10");
-// const simpleMath1 = new SimpleMath<string, number>("5", 10);
-// const simpleMath2 = new SimpleMath<number, string>(5, "10");
-const simpleMath3 = new SimpleMath<number, number>(5, 10);
+//Zadanie 5
+console.log('Zadanie 5')
+
+class EmployeeParameter {
+    greet(message: string): string {
+        return `Hello ${message}`;
+    }
+}
+const empParameter = new EmployeeParameter();
+console.log(empParameter.greet('Jon'));
