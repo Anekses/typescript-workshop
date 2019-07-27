@@ -5,11 +5,14 @@
   "main": "index.js",
   "dependencies": {},
   "devDependencies": {
-    "lite-server": "^2.4.0"
+    "lite-server": "2.5.3",
+    "typescript": "3.5.3"
   },
   "scripts": {
+    "start": "lite-server",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "lite-server"
+    "tsc": "tsc",
+    "tsc-watch": "tsc -w"
   },
   "author": "",
   "license": "ISC"
