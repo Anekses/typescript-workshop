@@ -1,5 +1,11 @@
 {
-    "extends": "./base",
+    "compilerOptions": {
+        "module": "commonjs",
+        "target": "ES5",
+        "noImplicitAny": false,
+        "sourceMap": false,
+        "experimentalDecorators": true,
+    },
     "exclude": [
         "node_modules"
     ]

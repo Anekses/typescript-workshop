@@ -5,12 +5,13 @@
   "main": "index.js",
   "dependencies": {},
   "devDependencies": {
+    "jest": "^24.8.0",
     "lite-server": "2.5.3",
     "typescript": "3.5.3"
   },
   "scripts": {
     "start": "lite-server",
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest",
     "tsc": "tsc",
     "tsc-watch": "tsc -w"
   },
