@@ -2,8 +2,6 @@
 //     Dane wejściowe: a, b
 //     Dane wyjściowe: suma(a,b)
 
-const sum = (a: number, b: number): number => {
-    return a + b;
-}
+const sum;
 
 module.exports = sum;
