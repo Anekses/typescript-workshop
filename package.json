@@ -5,13 +5,14 @@
   "main": "index.js",
   "dependencies": {},
   "devDependencies": {
+    "@types/node": "^12.6.8",
     "jest": "^24.8.0",
     "lite-server": "2.5.3",
     "typescript": "3.5.3"
   },
   "scripts": {
     "start": "lite-server",
-    "test": "jest",
+    "test": "tsc && jest",
     "tsc": "tsc",
     "tsc-watch": "tsc -w"
   },
