@@ -1,41 +1,38 @@
-// //Zadanie 4
-// //Przerób na abstrakcyjne:
-// //  - klasę Beeing
-// //  - pole "age" klasy Beeing
-// //  - metodę "grow" klasy Beeing
-// //Popraw błędy i klasy dziedziczące po niej
-
 // const password = "Balboa";
 // enum Color { Red, Blue, Green };
 
-// class Beeing {
-//     age: number;
+// abstract class Beeing {
+//     abstract age: number;
 //     protected name: string;
-//     readonly numberOfLegs: number;
+//     public numberOfLegs: number;
+
+//     abstract grow(): void;
+// }
+
+// class Animal extends Beeing {
+//     age: number;
 
 //     constructor(age: number, name: string, numberOfLegs: number) {
+//         super();
 //         this.age = age;
 //         this.name = name;
 //         this.numberOfLegs = numberOfLegs;
 //     }
 
+//     move(distance: number): void {
+//         console.log(`The ${this.name} moved ${distance} meters`);
+//     }
+
 //     grow(): void {
 //         this.age++;
 //         console.log(`I am ${this.age} years old.`);
-//     };
-// }
-
-// class Animal extends Beeing {
-//     constructor(age: number, name: string, numberOfLegs: number) {
-//         super(age, name, numberOfLegs);
-//     }
-
-//     move(distance: number): void {
-//         console.log(`The ${this.name} moved ${distance} meters`);
 //     }
 // }
 
 // class Dog extends Animal {
+//     grow(): void {
+//         throw new Error("Method not implemented.");
+//     }
 //     age: number;
 //     name: string;
 //     color: Color;
@@ -70,12 +67,3 @@
 //         console.log('Woof!');
 //     }
 // }
-
-// const dog: Dog = new Dog(5, "Reksio", 4, Color.Red, false);
-// console.log(dog.fullName);
-
-// dog.name = "Reks";
-// console.log(dog.fullName);
-
-// dog.name = "Reksio The Master";
-// console.log(dog.fullName);
