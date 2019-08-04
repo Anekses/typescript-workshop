@@ -1,4 +1,4 @@
-const sum = require('../task1');
+const { sum } = require('../../../app');
 
 test('check sum with numbers', () => {
     const a = 5;

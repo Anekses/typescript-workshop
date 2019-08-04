@@ -1,4 +1,4 @@
-const restParameters = require('../task4');
+const { restParameters } = require('../../../app');
 
 test('check restParameters with multiple strings', () => {
     const a = 'Joseph';

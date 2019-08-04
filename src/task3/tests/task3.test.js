@@ -1,8 +1,6 @@
-const data = require('../task3');
+const { defaultParameters, MathOperations } = require('../../../app');
 
 test('check defaultParameters with two numbers and MathOperations as Sum', () => {
-    const { defaultParameters, MathOperations } = data;
-
     const a = 24;
     const b = 8;
     const mathOperations = MathOperations.Sum;
@@ -13,8 +11,6 @@ test('check defaultParameters with two numbers and MathOperations as Sum', () =>
 });
 
 test('check defaultParameters with two numbers and MathOperations as Diff', () => {
-    const { defaultParameters, MathOperations } = data;
-
     const a = 24;
     const b = 8;
     const mathOperations = MathOperations.Diff;
@@ -25,8 +21,6 @@ test('check defaultParameters with two numbers and MathOperations as Diff', () =
 });
 
 test('check defaultParameters with two numbers and MathOperations as Multi', () => {
-    const { defaultParameters, MathOperations } = data;
-
     const a = 24;
     const b = 8;
     const mathOperations = MathOperations.Multi;
@@ -37,8 +31,6 @@ test('check defaultParameters with two numbers and MathOperations as Multi', () 
 });
 
 test('check defaultParameters with two numbers and MathOperations as Div', () => {
-    const { defaultParameters, MathOperations } = data;
-
     const a = 24;
     const b = 8;
     const mathOperations = MathOperations.Div;
@@ -49,8 +41,6 @@ test('check defaultParameters with two numbers and MathOperations as Div', () =>
 });
 
 test('check defaultParameters with two numbers and without MathOperations', () => {
-    const { defaultParameters, MathOperations } = data;
-
     const a = 24;
     const b = 8;
     const prediction = 32;

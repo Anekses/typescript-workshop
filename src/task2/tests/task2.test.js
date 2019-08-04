@@ -1,4 +1,4 @@
-const optionalParameters = require('../task2');
+const { optionalParameters } = require('../../../app');
 
 test('check optionalParameters with two numbers and isMultiplication true', () => {
     const a = 24;
