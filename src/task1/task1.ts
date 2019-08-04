@@ -2,13 +2,7 @@
 //Stwórz interfejs NamedPerson dla person0
 //Używając argumentów opcjonalnych, tablicy propertisów i definiowania funkcji dodaj obsługę dla person1, person2 i person3
 
-export interface NamedPerson {
-    firstName: string,
-    age?: number,
-    hobbies?: string[],
-    car?: string,
-    fullGreeting?(lastName: string): void
-}
+export interface NamedPerson { }
 
 const person0: NamedPerson = {
     firstName: 'Jon'

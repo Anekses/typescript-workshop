@@ -1,23 +1,11 @@
 //Zadanie 4
 //Rozbij interfejs NamedPerson na 5 interfejsów - co zauważasz?
 
-interface NamedPerson {
-    firstName: string
-}
-
-interface NamedPerson {
-    age?: number
-}
-
-interface NamedPerson {
-    hobbies?: string[]
-}
-
-interface NamedPerson {
-    car?: string
-}
-
-interface NamedPerson {
+export interface NamedPerson {
+    firstName: string,
+    age?: number,
+    hobbies?: string[],
+    car?: string,
     fullGreeting?(lastName: string): void
 }
 
