@@ -1,56 +1,24 @@
-// //Zadanie 3
-// //Dodaj getter i setter do fullName (nowe pole private w klasie "Dog"), gdzie:
-// //setter ustawi nową wartość tylko jeśli newValue.length > 5;
-// //getter poda wartość tylko jeśli zmienna "password" będzie "Balboa"
+import { NamedPerson } from "../task1/task1";
 
-// const password = "Rocky";
-// enum Color { Red, Blue, Green };
+//Zadanie 3
+//Stwórz interfejs NamedPersonClass, który rozszerza interfejs NamedPerson o wymagane pole: books[] 
+//Stwórz klasę Person, która implementuje interfejs NamedPerson z task1.ts
 
-// class Beeing {
-//     age: number;
-//     protected name: string;
-//     readonly numberOfLegs: number;
+interface NamedPersonClass extends NamedPerson {
+    books: string[];
+}
 
-//     constructor(age: number, name: string, numberOfLegs: number) {
-//         this.age = age;
-//         this.name = name;
-//         this.numberOfLegs = numberOfLegs;
-//     }
+class Person implements NamedPersonClass {
+    firstName: string;
+    age: number;
+    books: string[];
 
-//     grow(): void {
-//         this.age++;
-//         console.log(`I am ${this.age} years old.`);
-//     };
-// }
+    constructor(firstName: string, age: number) {
+        this.firstName = firstName;
+        this.age = age;
+    }
 
-// class Animal extends Beeing {
-//     constructor(age: number, name: string, numberOfLegs: number) {
-//         super(age, name, numberOfLegs);
-//     }
-
-//     move(distance: number): void {
-//         console.log(`The ${this.name} moved ${distance} meters`);
-//     }
-// }
-
-// class Dog extends Animal {
-//     age: number;
-//     name: string;
-//     color: Color;
-//     hasChildren: boolean;
-
-//     constructor(age: number, name: string, numberOfLegs: number, color: Color, hasChildren: boolean) {
-//         super(age, name, numberOfLegs);
-//         this.color = color;
-//         this.hasChildren = hasChildren;
-//     }
-
-//     move(distance: number): void {
-//         console.log(`The color of dog is: ${Color[this.color]}`);
-//         super.move(distance);
-//     }
-
-//     bark(): void {
-//         console.log('Woof!');
-//     }
-// }
+    fullGreeting(lastName: string): void {
+        console.log(`Hi, I am ${this.firstName} ${lastName}`)
+    }
+}

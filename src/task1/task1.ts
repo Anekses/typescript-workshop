@@ -1,40 +1,37 @@
 //Zadanie 1
-//Przerób klasy wykorzystując zalety TypeScript'a, uwzględniając:
-//  - dziedziczenie
-//  - konstruktory w każdej z klas
-//  - typy dla każdego propertisa klasy
-//  - typy dla każdej funkcji klasy
+//Stwórz interfejs NamedPerson dla person0
+//Używając argumentów opcjonalnych, tablicy propertisów i definiowania funkcji dodaj obsługę dla person1, person2 i person3
 
-const password = "Rocky";
-
-class Beeing {
-    age;
-    name;
-    numberOfLegs;
-
-    grow() { };
+export interface NamedPerson {
+    firstName: string,
+    age?: number,
+    hobbies?: string[],
+    car?: string,
+    fullGreeting?(lastName: string): void
 }
 
-class Animal {
-    age;
-    name;
-
-    move(distance) {
-        console.log(`The ${name} moved ${distance} meters`);
-    }
+const person0: NamedPerson = {
+    firstName: 'Jon'
 }
 
-class Dog {
-    age;
-    name;
-    color;
-    hasChildren;
+const person1: NamedPerson = {
+    firstName: 'Jon',
+    age: 30
+}
 
-    move(distance) {
-        console.log(`The ${name} moved ${distance} meters`);
-    }
+const person2: NamedPerson = {
+    firstName: 'Jon',
+    age: 30,
+    hobbies: ['Cooking', 'TV'],
+    car: 'Mazda'
+}
 
-    bark() {
-        console.log('Woof!');
+const person3: NamedPerson = {
+    firstName: 'Jon',
+    age: 30,
+    hobbies: ['Cooking', 'TV'],
+    car: 'Mazda',
+    fullGreeting(lastName: string): void {
+        console.log(`Hi, I am ${this.firstName} ${lastName}`)
     }
 }

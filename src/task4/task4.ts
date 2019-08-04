@@ -1,81 +1,48 @@
-// //Zadanie 4
-// //Przerób na abstrakcyjne:
-// //  - klasę Beeing
-// //  - pole "age" klasy Beeing
-// //  - metodę "grow" klasy Beeing
-// //Popraw błędy i klasy dziedziczące po niej
+//Zadanie 4
+//Rozbij interfejs NamedPerson na 5 interfejsów - co zauważasz?
 
-// const password = "Balboa";
-// enum Color { Red, Blue, Green };
+interface NamedPerson {
+    firstName: string
+}
 
-// class Beeing {
-//     age: number;
-//     protected name: string;
-//     readonly numberOfLegs: number;
+interface NamedPerson {
+    age?: number
+}
 
-//     constructor(age: number, name: string, numberOfLegs: number) {
-//         this.age = age;
-//         this.name = name;
-//         this.numberOfLegs = numberOfLegs;
-//     }
+interface NamedPerson {
+    hobbies?: string[]
+}
 
-//     grow(): void {
-//         this.age++;
-//         console.log(`I am ${this.age} years old.`);
-//     };
-// }
+interface NamedPerson {
+    car?: string
+}
 
-// class Animal extends Beeing {
-//     constructor(age: number, name: string, numberOfLegs: number) {
-//         super(age, name, numberOfLegs);
-//     }
+interface NamedPerson {
+    fullGreeting?(lastName: string): void
+}
 
-//     move(distance: number): void {
-//         console.log(`The ${this.name} moved ${distance} meters`);
-//     }
-// }
+const person0: NamedPerson = {
+    firstName: 'Jon'
+}
 
-// class Dog extends Animal {
-//     age: number;
-//     name: string;
-//     color: Color;
-//     hasChildren: boolean;
-//     private _fullName: string;
+const person1: NamedPerson = {
+    firstName: 'Jon',
+    age: 30
+}
 
-//     constructor(age: number, name: string, numberOfLegs: number, color: Color, hasChildren: boolean) {
-//         super(age, name, numberOfLegs);
-//         this.color = color;
-//         this.hasChildren = hasChildren;
-//     }
+const person2: NamedPerson = {
+    firstName: 'Jon',
+    age: 30,
+    hobbies: ['Cooking', 'TV'],
+    car: 'Mazda'
+}
 
-//     set fullName(value: string) {
-//         if (value.length > 5) {
-//             this._fullName = value;
-//         }
-//     }
-
-//     get fullName() {
-//         if (password === 'Balboa') {
-//             return this.name;
-//         }
-//         return 'Wrong password!';
-//     }
-
-//     move(distance: number): void {
-//         console.log(`The color of dog is: ${Color[this.color]}`);
-//         super.move(distance);
-//     }
-
-//     bark(): void {
-//         console.log('Woof!');
-//     }
-// }
-
-// const dog: Dog = new Dog(5, "Reksio", 4, Color.Red, false);
-// console.log(dog.fullName);
-
-// dog.name = "Reks";
-// console.log(dog.fullName);
-
-// dog.name = "Reksio The Master";
-// console.log(dog.fullName);
+const person3: NamedPerson = {
+    firstName: 'Jon',
+    age: 30,
+    hobbies: ['Cooking', 'TV'],
+    car: 'Mazda',
+    fullGreeting(lastName: string): void {
+        console.log(`Hi, I am ${this.firstName} ${lastName}`)
+    }
+}
