@@ -1,24 +1,26 @@
-const sum = (a: number, b: number) => {
+const sum = (a, b) => {
+    const c = 5;
     return a + b;
 };
 
 //Opcjonalne parametry
-const optionalParameters = (a: number, b: number, isMultiplication: boolean) => {
-    let result: number | null = 0;
+const optionalParameters = (a, b, isMultiplication) => {
+    let result = 0;
     if (isMultiplication) {
         result = a * b;
     }
     else if (b !== 0) {
         result = a / b;
-    } else {
-        result = null;
-        return 'b jest równe 0';
     }
+    // } else {
+    //     result = null;
+    //     return 'b jest równe 0';
+    // }
     return result;
 };
 
 enum MathOperations { Sum, Diff, Multi, Div };
-const defaultParameters = (a: number, b: number, operation = MathOperations.Sum) => {
+const defaultParameters = (a, b, operation = MathOperations.Sum, additionalParam) => {
     if (b == 0) return 0;
     switch (operation) {
         case MathOperations.Sum:
@@ -34,7 +36,7 @@ const defaultParameters = (a: number, b: number, operation = MathOperations.Sum)
     }
 }
 
-const restParameters = (firstName: string, ...restOfNames: any[]) => {
+const restParameters = (firstName, ...restOfNames) => {
     return firstName + " " + restOfNames.join(" ") + " " + firstName;
 }
 

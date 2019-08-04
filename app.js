@@ -1,6 +1,8 @@
 const sum = (a, b) => {
+    const c = 5;
     return a + b;
 };
+//Opcjonalne parametry
 const optionalParameters = (a, b, isMultiplication) => {
     let result = 0;
     if (isMultiplication) {
@@ -9,10 +11,10 @@ const optionalParameters = (a, b, isMultiplication) => {
     else if (b !== 0) {
         result = a / b;
     }
-    else {
-        result = null;
-        return 'b jest równe 0';
-    }
+    // } else {
+    //     result = null;
+    //     return 'b jest równe 0';
+    // }
     return result;
 };
 var MathOperations;
@@ -23,7 +25,7 @@ var MathOperations;
     MathOperations[MathOperations["Div"] = 3] = "Div";
 })(MathOperations || (MathOperations = {}));
 ;
-const defaultParameters = (a, b, operation = MathOperations.Sum) => {
+const defaultParameters = (a, b, operation = MathOperations.Sum, additionalParam) => {
     if (b == 0)
         return 0;
     switch (operation) {
@@ -43,4 +45,3 @@ const restParameters = (firstName, ...restOfNames) => {
     return firstName + " " + restOfNames.join(" ") + " " + firstName;
 };
 module.exports = { sum, optionalParameters, defaultParameters, MathOperations, restParameters };
-//# sourceMappingURL=app.js.map
