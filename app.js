@@ -2,15 +2,18 @@ const sum = (a, b) => {
     return a + b;
 };
 const optionalParameters = (a, b, isMultiplication) => {
+    let result = 0;
     if (isMultiplication) {
-        return a * b;
+        result = a * b;
     }
     else if (b !== 0) {
-        return a / b;
+        result = a / b;
     }
     else {
+        result = null;
         return 'b jest równe 0';
     }
+    return result;
 };
 var MathOperations;
 (function (MathOperations) {
@@ -40,3 +43,4 @@ const restParameters = (firstName, ...restOfNames) => {
     return firstName + " " + restOfNames.join(" ") + " " + firstName;
 };
 module.exports = { sum, optionalParameters, defaultParameters, MathOperations, restParameters };
+//# sourceMappingURL=app.js.map

@@ -1,7 +1,17 @@
 {
     "compilerOptions": {
         "module": "commonjs",
-        "target": "ES6"
+        "target": "ES6",
+        "declaration": true,
+        "diagnostics": false,
+        "noImplicitAny": true,
+        "noEmitOnError": true,
+        "noImplicitReturns": true,
+        "noUnusedLocals": true,
+        "noUnusedParameters": true,
+        "removeComments": true,
+        "sourceMap": true,
+        "strictNullChecks": true
     },
     "exclude": [
         "node_modules"
