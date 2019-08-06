@@ -4,7 +4,7 @@ Przyjmuje ona tablicę i funkcję, którą ma wykonać dla każdego elementu tab
 Sprawdź czy typescript akceptuje wyrażenia w części CHECK
  */
 
-function map(arr, f) {
+function map<T, U>(arr: T[], f: (e: T) => U): U[] {
     return arr.map(f);
 }
 

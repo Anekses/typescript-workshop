@@ -3,18 +3,18 @@ Uzupełnij generyczną klasę Stack
 Sprawdź czy typescript akceptuje wyrażenia w części CHECK
  */
 
-// TODO
+
 class Stack<T> {
-    push(e) {
-        // dodaje element na szczyt stosu
-    }
+    private values: Array<T> = [];
 
-    pop() {
-        // zwraca element ze szczytu stosu
+    push(e: T): void {
+        this.values.push(e);
     }
-
-    toArray() {
-        // zwraca elementy stosu jako tablicę
+    pop(): T | undefined {
+        return this.values.pop();
+    }
+    toArray(): Array<T> {
+        return this.values;
     }
 }
 

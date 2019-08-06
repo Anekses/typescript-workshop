@@ -15,9 +15,8 @@ function getPrice<T extends WithPrice>(o: T): number {
 
 getPrice({ name: 'foobar', price: 100 });
 
-
-// TODO
-function doublePrice(o) {
+function doublePrice<T extends WithPrice>(o: T): T {
+    return { ...o, price: o.price * 2 };
 }
 
 // CHECK

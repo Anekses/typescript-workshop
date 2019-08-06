@@ -8,9 +8,8 @@ function pick<T, K extends keyof T>(o: T, key: K): T[K] {
     return o[key];
 }
 
-// TODO
-function entry(o, key) {
-
+function entry<T, K extends keyof T>(o: T, key: K): [K, T[K]] {
+    return [key, o[key]];
 }
 
 const obj = {

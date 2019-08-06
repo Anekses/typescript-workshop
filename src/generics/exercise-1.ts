@@ -8,8 +8,7 @@ function wrongId(a: unknown): unknown {
     return a;
 }
 
-// TODO
-function id(a) {
+function id<T>(a: T): T {
     return a;
 }
 
