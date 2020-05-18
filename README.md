@@ -2,8 +2,26 @@
 
 [Source](docs/deck.md)
 
-
 # Excercises
+
+### Functions
+
+[excercise](https://codesandbox.io/s/typescript-functions-s7764)
+
+[solution](https://codesandbox.io/s/typescript-functions-answers-2j592)
+
+
+### Classes
+
+[exercise-solution](https://codesandbox.io/s/typescript-classes-reofh)
+
+
+### Interfaces
+
+[exercise](https://codesandbox.io/s/typescript-interfaces-tsdpq)
+
+[solution](https://codesandbox.io/s/typescript-interfaces-answers-z5wew)
+
 
 ### Type unions 
 
@@ -12,6 +30,7 @@
 [solution](src/union/solution.ts)
 
 [playground](https://www.typescriptlang.org/play?ssl=5&ssc=1&pln=6&pc=1#code/GYVwdgxgLglg9mABAGzgcwAoCcYFsawBuAphgIYxYAUZAXIgIJZoi7FhQA0iARvUyzYcAlPUJwYAE0QBvALAAoRIggIAznGTEAdKjRUABlQAkMsgF9upnueEHhAbkXnFigPRvEAFQDyAER9+SQArEDUoRCgACxg1SIBPAAdiSLhELGINZBIVOFxEmC0sRGIsLDgsNUUoJJSBVnYIgF5EMGISLCcFVwU9bDwCGBJySioARm4x7QAmAGZHRT6cfCJSCmoAIjJtsg3uKCwQYgXuhQ9EAAEoNQBaYgAPZOg7sorF9H6VobXRmUtEADuMDAkjgAMcQA) 
+
 
 ### String unions 
 
@@ -57,12 +76,10 @@
 
 [playground](https://www.typescriptlang.org/play?ssl=20&ssc=20&pln=1&pc=1#code/GYVwdgxgLglg9mABBAhgGwiNKoFMBqcaIAtrgBQDOAFigA64BciAyrQwJTNikBGuAJ0QBvALAAoRIkoB3GFAjVEVdrgB0AaxhgAJhxESpU1JVyIARJTrVBuc40NGpA3FBACkAWRzU1ABQBJRAAqRG8oXzo4GRV6dQEUHRgQSgAaRABmfVCAFkQAekyAbkdjFFMLCABPNG0dQXtSoxc3DzCffyDQ8Mjo2IY1BKSU9IAmbOlVNRsYAHNqKBLJIxMzcwgEOwdlpycW9y8OwJD2iLUomJo4wcTktMRxk6uBmfmoE4BGAuKm1cqQfiNHbNVwHU69S5TNC4MCzCLpLJLKQAXwkqPEElQGCwOAIRFIFGEiC0umY6wBdnS0NhEWYHwADPTEMiOEssZhsHhCMQyOQiSSdGSNmBKYghndmABWenpV4LOmM5mszHoDm47kEvnEupkqw2FzmdLilIKpkstmqnFc-G8-k6yo1OoNI23E0PRmy3BzeWIBlm5UY8T5QoAFQA8gARMPMGAkOjQshgd4RGCURBQKoMRDlRAR1MQASx7S4nSIcDwJBQOBi3CUIgANzMGzjMGhiEEAjgAkoEgzWbYcUQAF5ECLGwIikA)
 
+### Optional chaining, Nullable Coalescing
 
+### Tsconfig
 
+### Additional exercises
 
-
-
-
-
-
- 
+[exercises](https://github.com/mdevils/typescript-exercises)
