@@ -46,7 +46,7 @@ interface Person {
 ---
 
 ```typescript
-type Union = TypeA | TypeB
+type Union = TypeA | TypeB;
 ```
 
 ---
@@ -591,7 +591,6 @@ const mike: Admin = getCatGif() as Admin;
     sufficiently overlaps with the other.
 */
 ```
-
 
 
 
