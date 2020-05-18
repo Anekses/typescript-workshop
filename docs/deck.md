@@ -335,7 +335,7 @@ function map<T, S>(collection: T[], f: (e: T) => S): S[] {
 ```typescript
 interface Person {
   name: string;
-  age: number
+  age: number;
 }
 
 function printName (person: Person) {
@@ -591,5 +591,4 @@ const mike: Admin = getCatGif() as Admin;
     sufficiently overlaps with the other.
 */
 ```
-
 
