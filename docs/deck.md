@@ -195,7 +195,7 @@ type BooleanStringPrinter = BooleanPrinter & StringPrinter;
 
 ---
 
-# Generics (?)
+# Generics 
 
 ---
 
@@ -496,9 +496,9 @@ function emailAddress(user: User): string {
 
 ```typescript
 interface OfferListProps {
+  isLoading: boolean;
   offers?: Offer[];
   error?: Error;
-  isLoading: boolean;
 }
 
 function render(props: OfferListProps): string {
@@ -506,7 +506,7 @@ function render(props: OfferListProps): string {
 
   if (error)
     return error.toString();
-  if (isLoading) {
+  if (isLoading)
     return  "Loading";
   return renderOffers(offers);
 }
