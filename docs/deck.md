@@ -71,7 +71,7 @@ id.toUpperCase();
 
 
 ```typescript
-type Role = 'user' | 'admin' | 'editor'
+type Role = 'user' | 'admin' | 'editor';
 
 
 
@@ -591,6 +591,5 @@ const mike: Admin = getCatGif() as Admin;
     sufficiently overlaps with the other.
 */
 ```
-
 
 
