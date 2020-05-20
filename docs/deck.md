@@ -54,6 +54,7 @@ Type | Example
 `null` | `const n: null = null; `
 `undefined` | `const u: undefined = undefined;`
 `object` | `const o: object = { prop: 0, prop1: "red" }`
+`unknown` | `const u: unknown = unknown`
 
 ---
 
@@ -301,6 +302,22 @@ const user = new User('Stefan');
 user.firstName = 'Marian'	//error! readonly
 user.secondName = 'Nowak'	//error! readonly
 
+```
+
+---
+
+## Classes
+
+Short constructor
+
+```typescript
+class User {
+	readonly secondName: string = 'Koziol';
+
+	constructor(readonly firstName: string) {
+		this.firstName = firstName;
+	}
+}
 ```
 
 ---
