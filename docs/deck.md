@@ -314,9 +314,7 @@ Short constructor
 class User {
 	readonly secondName: string = 'Koziol';
 
-	constructor(readonly firstName: string) {
-		this.firstName = firstName;
-	}
+	constructor(readonly firstName: string) { }
 }
 ```
 
