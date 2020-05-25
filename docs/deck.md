@@ -996,7 +996,6 @@ output:
 
 ---
 
-
 # `type Intersection = TypeA & TypeB`
 
 ---
@@ -1276,6 +1275,24 @@ console.log(fancy.age);
 ---
 
 # Discriminated unions
+
+---
+
+# unions are ... unions
+
+```typescript
+interface Cat {
+  name: string;
+  breed: string;
+}
+
+interface Dog {
+  name: string;
+  breed: string;
+}
+
+type Animal = Cat | Dog;
+```
 
 ---
 
