@@ -42,7 +42,7 @@ Type | Example
 `string` | `const color: string = "blue";`
 `array` | `const list: number[] = [1, 2, 3];`
 `tuple` | `const x: [string, number] = ["hello", 15];`
-`enum` | `enum Color {Red, Green, Blue} <br>const c: Color = Color.Green;`
+`enum` | `enum Color {Red, Green, Blue}          const c: Color = Color.Green;`
 
 ---
 
@@ -55,6 +55,7 @@ Type | Example
 `undefined` | `const u: undefined = undefined;`
 `object` | `const o: object = { prop: 0, prop1: "red" }`
 `unknown` | `const u: unknown = unknown`
+`never` | `const func = (): never => ...`
 
 ---
 
@@ -277,7 +278,7 @@ class Animal {
     constructor(theName: string) { this.#name = theName; }
 }
 
-new Animal("Cat").#name;
+new Animal("Cat").#name; //error
 ```
 
 ---
@@ -306,19 +307,6 @@ user.secondName = 'Nowak'	//error! readonly
 
 ---
 
-## Classes
-
-Short constructor
-
-```typescript
-class User {
-	readonly secondName: string = 'Koziol';
-
-	constructor(readonly firstName: string) { }
-}
-```
-
----
 
 ## Classes
 
@@ -342,6 +330,19 @@ user.secondName = 'Nowak'	//error! readonly
 
 ---
 
+## Classes
+
+Short constructor
+
+```typescript
+class User {
+	readonly secondName: string = 'Koziol';
+
+	constructor(readonly firstName: string) { }
+}
+```
+
+---
 
 ## Classes
 
@@ -826,7 +827,7 @@ Type vs Interface
 type Keys = 'firstName' | 'secondName'
 
 type DudeType = {
-  [key in Keys]: string
+  .[key in Keys]: string
 }
 
 const test: DudeType = {
@@ -836,6 +837,7 @@ const test: DudeType = {
 
 Type: OK
 Interface: Error
+Ignore dot
 ```
 
 ---
