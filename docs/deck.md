@@ -899,7 +899,7 @@ Result code
 
 ---
 
-# Types algebra
+# [fit] Types algebra
 
 ---
 
@@ -915,6 +915,16 @@ Result code
 
 ```typescript
 type Id = number;
+```
+
+---
+
+```typescript
+type MsgId = string;
+type ClientId = string;
+
+const clientId: ClientId = 1;
+const msgId: MsgId = clientId;
 ```
 
 ---
@@ -973,13 +983,13 @@ const lead: Role = 'lead';
 ---
 
 ```typescript
-enum Role { ADMIN = 'admin', USER = 'user' }`
+enum Role { ADMIN = 'admin', USER = 'user' }
 ```
 
 ---
 
 ```typescript
-enum Role { ADMIN = 'admin', USER = 'user' }`
+enum Role { ADMIN = 'admin', USER = 'user' }
 Role.ADMIN;
 ```
 
@@ -1010,7 +1020,7 @@ output:
 
 ---
 
-# `type Intersection = TypeA & TypeB`
+# [fit] `type Intersection = TypeA & TypeB`
 
 ---
 
@@ -1082,7 +1092,7 @@ type BooleanStringPrinter = BooleanPrinter & StringPrinter;
 
 ---
 
-# Generics 
+# [fit] Generics 
 
 ---
 
