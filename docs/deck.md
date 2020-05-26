@@ -49,13 +49,25 @@ Type | Example
 ## Types part 2
 Type | Example
 ---|---
-`any` | `const variable: any = 4;`
 `void` | `const print = (): void => { console.log('printed') }`
 `null` | `const n: null = null; `
 `undefined` | `const u: undefined = undefined;`
 `object` | `const o: object = { prop: 0, prop1: "red" }`
+`any` | `const variable: any = 4;`
 `unknown` | `const u: unknown = unknown`
 `never` | `const func = (): never => ...`
+
+---
+
+## any vs unknown
+
+```typescript
+let a: any;
+let b: unknown;
+
+a.foo()
+b.foo()
+```
 
 ---
 
