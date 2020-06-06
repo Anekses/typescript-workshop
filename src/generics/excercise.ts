@@ -1,13 +1,22 @@
-// TODO: Adjust type to resolve compiler errors (tip: use generic)
-function capitalizeLabel(o: never): never {
-  return {
-    ...o,
-    label: o.label.toUpperCase()
-  }
-};
+function dropdownComponent<T>(props: Props<T>) {
+  const { options, initializer, selected, onChange } = props;
+  // Print all options and show which is selected
+  options.forEach(option => {
+    console.log(`Option: ${option.label}, selected? ${option.value === selected}`);
+  });
+  // After initializer resolve, fire onChange
+  initializer.then(value => {
+    onChange(value);
+  });
+  const randomOption = options[Math.floor(Math.random() * options.length)];
+  // Select random element
+  onChange(randomOption.value);
+}
 
-const a = capitalizeLabel({ label: "foobar", id: 100 });
-console.log(a.id * 2);
-
-const b = capitalizeLabel({ label: "qvux", hasNext: true });
-console.log(b.hasNext === true);
+// TODO: Adjust types of this interface props to resolve compile errors
+interface Props<T> {
+  options: never;
+  initializer: never;
+  selected: never;
+  onChange: never;
+}
