@@ -914,6 +914,13 @@ Result code
 ---
 
 ```typescript
+type Name = 'name';
+type True = true;
+```
+
+---
+
+```typescript
 type Id = number;
 ```
 
@@ -929,19 +936,7 @@ const msgId: MsgId = clientId;
 
 ---
 
-```typescript
-type Person = {
-  name: string;
-  age: number;
-}
-
-interface Person {
-  name: string;
-  age: number;
-}
-```
-
----
+# Union
 
 ```typescript
 type Union = TypeA | TypeB;
@@ -970,7 +965,6 @@ id.toUpperCase();
 
 ```typescript
 type Role = 'user' | 'admin' | 'editor';
-
 
 
 const lead: Role = 'lead';
@@ -1020,7 +1014,33 @@ output:
 
 ---
 
-# [fit] `type Intersection = TypeA & TypeB`
+# Product
+
+* `interface`
+* tuple
+
+---
+
+```typescript
+interface Person {
+  name: string;
+  age: number;
+}
+```
+
+---
+
+```typescript
+type Point2D = [number, number];
+```
+
+---
+
+# Intersection
+
+```typescript
+type Intersection = TypeA & TypeB;
+```
 
 ---
 
@@ -1064,10 +1084,12 @@ interface StringPrinter {
 interface BooleanStringPrinter extends StringPrinter {
   print(a: boolean): string;
 }
-/* Error: Types of property 'print' are incompatible.
-    Type '(a: boolean) => string' is not assignable to type '(a: string) => string'.
-      Types of parameters 'a' and 'a' are incompatible.
-        Type 'string' is not assignable to type 'boolean'.(2430)
+/*
+Error: Types of property 'print' are incompatible.
+  Type '(a: boolean) => string' is not assignable to 
+    type '(a: string) => string'.
+    Types of parameters 'a' and 'a' are incompatible.
+      Type 'string' is not assignable to type 'boolean'.
 */
 ```
 
@@ -1127,7 +1149,7 @@ interface User {
   age: number;
 }
 
-type NameAndAddress = Pick<'name' | 'address', User>;
+type NameAndAddress = Pick<User, 'name' | 'address'>;
 
 function sendPackage(receipent: NameAndAddress) {
   print(receipent.name, receipent.address);
@@ -1139,7 +1161,6 @@ function sendPackage(receipent: NameAndAddress) {
 # Omit
 ```typescript
 type WithoutId = Omit<User, 'id'>
-// note changed order
 
 function serializeToClient(user: WithoutId) {
   user.id;
@@ -1156,9 +1177,17 @@ function serializeToClient(user: WithoutId) {
 
 # Record
 ```typescript
-type Users = Record<number, User>;
+type Users = Record<string, User>;
 const usersById: Users = getAllUsers();
-usersById[1234].name;
+usersById.foobar1234.name;
+```
+
+---
+
+# Partial
+```typescript
+type PartialUser = Partial<User>;
+const onlyName: PartialUser = { name: "john" };
 ```
 
 ---
@@ -1173,6 +1202,11 @@ interface Team<T> {
   members: Array<T>;
 }
 
+interface AllegroEmployee {
+  id: string;
+  name: string;
+}
+
 type AllegroTeam = Team<AllegroEmployee>;
 ```
 
@@ -1185,9 +1219,13 @@ interface HasId {
 
 type Entities<T> = Array<T & HasId>;
 
-type Offers = Entities<{ title: string }>; 
+type Offers = Entities<{ title: string, price: number }>; 
 
-const offers: Offers = [{ title: "foobar", id: "1" }];
+const offers: Offers = [{ 
+  title: "foobar", 
+  id: "1", 
+  price: 100 
+}];
 ```
 
 ---
