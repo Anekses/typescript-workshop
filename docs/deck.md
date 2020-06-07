@@ -204,7 +204,7 @@ const suits = ["hearts", "spades", "clubs", "diamonds"];
 
 function pickCard(x: { suit: string; card: number }[]): number;
 function pickCard(x: number): { suit: string; card: number };
-function pickCard(x): any {
+function pickCard(x: any): any {
 	if (typeof x == "object") {
 		returnMath.floor(Math.random() * x.length);
 	}
@@ -365,9 +365,7 @@ Static properties
 class BabyUser {
 	static nationality = 'Polish';
 
-	constructor(readonly firstName: string) {
-		this.firstName = firstName;
-	}
+	constructor(readonly firstName: string) { }
 }
 
 const user = new BabyUser('Stefan');
@@ -817,11 +815,11 @@ c.interval = 5.0;
 Type vs Interface
 
 ```typescript
-type Base {
+type Base = {
   name: string
 }
 
-type Base {
+type Base = {
   firstName: string
 }
 
